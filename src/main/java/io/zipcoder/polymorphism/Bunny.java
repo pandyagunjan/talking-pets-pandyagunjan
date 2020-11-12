@@ -5,6 +5,10 @@ public class Bunny extends Pet{
     public Bunny() {
         super();
     }
+    public Bunny(String name)
+    {
+        super(name);
+    }
     @Override
     public String speak()
     {

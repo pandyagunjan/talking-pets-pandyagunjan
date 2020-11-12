@@ -1,8 +1,11 @@
 package io.zipcoder.polymorphism;
+import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.*;
 
-
 public class MainApplication {
+
+
 
 
     public static void main(String[] args) {
@@ -27,44 +30,53 @@ public class MainApplication {
               switch(petType)
               {
                   case 1 :
-                          Dog dog = new Dog();
+
                           System.out.print("Dog's Name:" );
                           petName= scanner.next();
-                          dog.petName=petName;
+                          Dog dog = new Dog(petName);
                           pets.add(dog);
-                        //  dog.speak();
+                          dog.speak();
                           break;
 
                   case 2 :
-                          Cat cat = new Cat();
+
                           System.out.print("Cat's Name:" );
                           petName= scanner.next();
+                          Cat cat = new Cat();
                           cat.petName=petName;
                           pets.add(cat);
-                     //     cat.speak();
+                          cat.speak();
                           break;
                   case 3 :
-                          Bunny bunny = new Bunny();
+
                           System.out.print("Bunny's Name:" );
                           petName= scanner.next();
+                          Bunny bunny = new Bunny();
                           bunny.petName=petName;
                           pets.add(bunny);
-                        //  bunny.speak();
+                          bunny.speak();
                           break;
 
               }
 
 
-            //  System.out.println(pets.toString());
           }
 
-        for (Pet p: pets)
+        MainApplication ma= new MainApplication();
+        ma.printResults(pets);
+
+    }
+
+    public void printResults(ArrayList<Pet> petsPassed){
+
+      Collections.sort(petsPassed);
+
+        for (Pet p: petsPassed)
         {
             System.out.println("Pet's Name :" + String.valueOf(p.getPetName()));
             p.speak();
         }
-
-
     }
+
 
 }
