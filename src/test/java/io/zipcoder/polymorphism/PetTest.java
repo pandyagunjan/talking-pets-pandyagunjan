@@ -81,8 +81,10 @@ public class PetTest {
         pets.add(cat);
         pets.add(dog);
         pets.add(bunny);
-        MainApplication ma= new MainApplication();
-        ma.printResults(pets);
+        PetService petService= new PetService();
+       // Integer noOfPets = petService.getNumberOfPets();
+        //petService.acceptName(noOfPets);
+        petService.printResults(pets);
 
         // Then (we expect the given data, to match the retrieved data)
        // Assert.assertEquals(givenName1 , pets.equals());

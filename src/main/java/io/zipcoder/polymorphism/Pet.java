@@ -28,7 +28,7 @@ public class Pet {
         return "Speaking from PET class";
     }
 
-    public static Comparator<Pet> petComparator=new Comparator<Pet>()
+    public  Comparator<Pet> petComparator=new Comparator<Pet>()
     {
 
        public int compare (Pet p1, Pet p2){
