@@ -32,20 +32,19 @@ public class MainApplication {
                   case 1 :
 
                           System.out.print("Dog's Name:" );
-                          petName= scanner.next();
+                          petName = scanner.next();
                           Dog dog = new Dog(petName);
                           pets.add(dog);
-                          dog.speak();
+                         // System.out.print(dog.speak());
                           break;
 
                   case 2 :
 
                           System.out.print("Cat's Name:" );
                           petName= scanner.next();
-                          Cat cat = new Cat();
-                          cat.petName=petName;
+                          Cat cat = new Cat(petName);
                           pets.add(cat);
-                          cat.speak();
+                        //  cat.speak();
                           break;
                   case 3 :
 
@@ -54,27 +53,32 @@ public class MainApplication {
                           Bunny bunny = new Bunny();
                           bunny.petName=petName;
                           pets.add(bunny);
-                          bunny.speak();
+                        //  bunny.speak();
                           break;
-
+                  default :
+                      System.out.print("Program Ending.....");
+                      System.exit(0);
+                      break;
               }
 
 
           }
 
-        MainApplication ma= new MainApplication();
-        ma.printResults(pets);
+       MainApplication ma= new MainApplication();
+       ma.printResults(pets);
+
 
     }
 
     public void printResults(ArrayList<Pet> petsPassed){
 
-      Collections.sort(petsPassed);
+     // Collections.sort(petsPassed);  // For Comparable
 
+       Collections.sort(petsPassed,Pet.petComparator);
         for (Pet p: petsPassed)
         {
-            System.out.println("Pet's Name :" + String.valueOf(p.getPetName()));
-            p.speak();
+            System.out.println("\nPet's Name :" + String.valueOf(p.getPetName()));
+            System.out.print(p.speak()+"\n");
         }
     }
 

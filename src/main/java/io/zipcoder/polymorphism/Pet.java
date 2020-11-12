@@ -1,16 +1,20 @@
 package io.zipcoder.polymorphism;
 
-public class Pet implements Comparable<Pet>{
+import java.util.Comparator;
 
-    String petName = "" ;
+public class Pet {
+// Comparable<Pet>{
+
+    String petName = "";
 
     public Pet() {
 
     }
-    public Pet(String petName)
-    {
-        this.petName=petName;
+
+    public Pet(String petName) {
+        this.petName = petName;
     }
+
     public String getPetName() {
         return petName;
     }
@@ -20,23 +24,29 @@ public class Pet implements Comparable<Pet>{
     }
 
 
-    public String speak()
-    {
+    public String speak() {
         return "Speaking from PET class";
     }
 
+    public static Comparator<Pet> petComparator=new Comparator<Pet>()
+    {
+
+       public int compare (Pet p1, Pet p2){
+
+        return p1.getPetName().compareTo(p2.getPetName());
+
+          }
+
+    };
+
+
+    /* Comparable interface
 @Override
     public int compareTo(Pet o) {
 
         return this.getPetName().compareTo(o.getPetName());
-      /*  if(this.getPetName().equals(o.getPetName()))
-            return 0;
-        else if()
-          {
-              return -1;
-          }
-          else
-              return 1;*/
 
     }
+    */
+
 }

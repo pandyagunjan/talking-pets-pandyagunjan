@@ -4,7 +4,9 @@ package io.zipcoder.polymorphism;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import sun.jvm.hotspot.opto.MachNode;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 
@@ -61,6 +63,29 @@ public class PetTest {
         // String str=pet.speak();
         // Then (we expect the given data, to match the retrieved data)
         Assert.assertEquals(givenName , pet.speak());
+
+    }
+
+    @Test
+    public void printTest() {
+        // Given (pet data)
+        String givenName1 = "Zully";
+        String givenName2 = "Jigu";
+        String givenName3 = "Apple";
+        // When (a pet is constructed)
+        Cat cat = new Cat(givenName1);
+        Dog dog = new Dog(givenName2);
+        Bunny bunny = new Bunny(givenName3);
+        //  pet.setPetName(givenName);
+        ArrayList<Pet> pets = new ArrayList<Pet>();
+        pets.add(cat);
+        pets.add(dog);
+        pets.add(bunny);
+        MainApplication ma= new MainApplication();
+        ma.printResults(pets);
+
+        // Then (we expect the given data, to match the retrieved data)
+       // Assert.assertEquals(givenName1 , pets.equals());
 
     }
 
