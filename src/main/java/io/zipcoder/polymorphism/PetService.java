@@ -25,17 +25,18 @@ public class PetService {
     public void acceptName(Integer noOfPetsCount)
     {
        int petType=0;
-
+       String passNewLine="";
         for(int i =0 ; i <noOfPetsCount ;i++) {
-            System.out.print("What kind of pet you have ? 1.Dog  2.Cat 3.Bunny : " );
+            System.out.print("\nWhat kind of pet you have ? 1.Dog  2.Cat 3.Bunny :" );
             petType = scanner.nextInt();
+            passNewLine=scanner.nextLine();
 
 
             switch(petType)
             {
                 case 1 :
                     System.out.print("Dog's Name:" );
-                    petName = scanner.next();
+                    petName = scanner.nextLine();
                     Dog dog = new Dog(petName);
                     this.pets.add(dog);
                     break;
@@ -43,7 +44,7 @@ public class PetService {
                 case 2 :
 
                     System.out.print("Cat's Name:" );
-                    petName= scanner.next();
+                    petName= scanner.nextLine();
                     Cat cat = new Cat(petName);
                     this.pets.add(cat);
                     //  cat.speak();
@@ -51,7 +52,7 @@ public class PetService {
                 case 3 :
 
                     System.out.print("Bunny's Name:" );
-                    petName= scanner.next();
+                    petName= scanner.nextLine();
                     Bunny bunny = new Bunny();
                     bunny.petName=petName;
                     this.pets.add(bunny);
