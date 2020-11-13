@@ -2,8 +2,7 @@ package io.zipcoder.polymorphism;
 
 import java.util.Comparator;
 
-public class Pet {
-// Comparable<Pet>{
+public class Pet implements Comparable<Pet>{
 
     String petName = "";
 
@@ -32,21 +31,20 @@ public class Pet {
     {
 
        public int compare (Pet p1, Pet p2){
-
-        return p1.getPetName().compareTo(p2.getPetName());
+           return p1.getPetName().compareTo(p2.getPetName());
 
           }
 
     };
 
 
-    /* Comparable interface
+  // Comparable interface
 @Override
     public int compareTo(Pet o) {
 
         return this.getPetName().compareTo(o.getPetName());
 
     }
-    */
+
 
 }

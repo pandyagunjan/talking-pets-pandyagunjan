@@ -69,14 +69,25 @@ public class PetService {
     }
     public void printResults(ArrayList<Pet> petsPassed){
 
-        // Collections.sort(petsPassed);  // For Comparable
+       //
         Pet petClass = new Pet();
+        System.out.println("\n============ Display Using Comparator ============");
         Collections.sort(petsPassed,petClass.petComparator);
         for (Pet p: petsPassed)
         {
             System.out.println("\nPet's Name :" + String.valueOf(p.getPetName()));
             System.out.print(p.speak()+"\n");
         }
+        Collections.sort(petsPassed);  // For Comparable
+        System.out.println("\n ============ Display Using Comparable Interface ============");
+        Collections.sort(petsPassed,petClass.petComparator);
+        for (Pet p: petsPassed)
+        {
+            System.out.println("\nPet's Name :" + String.valueOf(p.getPetName()));
+            System.out.print(p.speak()+"\n");
+        }
+
+
     }
 
 
