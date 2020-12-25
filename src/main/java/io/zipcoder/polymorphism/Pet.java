@@ -27,15 +27,15 @@ public class Pet implements Comparable<Pet>{
         return "Speaking from PET class";
     }
 
-    public  Comparator<Pet> petComparator=new Comparator<Pet>()
-    {
-
-       public int compare (Pet p1, Pet p2){
-           return p1.getPetName().compareTo(p2.getPetName());
-
-          }
-
-    };
+//    public  Comparator<Pet> petComparator=new Comparator<Pet>()
+//    {
+//
+//       public int compare (Pet p1, Pet p2){
+//           return p1.getPetName().compareTo(p2.getPetName());
+//
+//          }
+//
+//    };
 
 
   // Comparable interface
@@ -46,5 +46,11 @@ public class Pet implements Comparable<Pet>{
 
     }
 
-
+    static class NameComparator<P> implements Comparator<Pet>
+    {
+        public int compare(Pet p1,Pet p2)
+        {
+            return p1.getPetName().compareTo(p2.getPetName());
+        }
+    }
 }
